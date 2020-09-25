@@ -5,7 +5,7 @@ fn main()
     
     let config = learn_rust::Config::new(&args).unwrap_or_else(|err|
         {
-            println!("Problem parsing arguments: {}", err);
+            eprintln!("Problem parsing arguments: {}", err);
             std::process::exit(1);
         });
 
@@ -13,7 +13,7 @@ fn main()
     
     learn_rust::run(config).unwrap_or_else(|err|
         {
-            println!("Application error: {}", err);
+            eprintln!("Application error: {}", err);
             std::process::exit(1);
         });
 }
